@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посты - GamePyers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/posts.css') }}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GamePyers</h1>
+            <p>Разрабатываем игры</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/posts">Посты</a></li>
+                <li><a href="/news">Новости</a></li>
+                <li><a href="/games">Игры</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="post-form">
+            <h2>Создать новый пост</h2>
+            <form action="/create_post" method="post">
+                <textarea name="content" placeholder="Что у вас на уме?" required></textarea>
+                <button type="submit">Опубликовать</button>
+            </form>
+        </section>
+
+        <section class="posts-section">
+            <h2>Ваши посты</h2>
+            
+            <article class="post-item">
+                <div class="post-content">
+                    <p>Первый пост на сайте! Игра разрабатывается полным ходом.</p>
+                </div>
+                <div class="post-actions">
+                    <button class="edit-btn">Редактировать</button>
+                    <button class="delete-btn">Удалить</button>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-content">
+                    <p>Сегодня мы добавили новый уровень в нашу игру. Ждите обновлений!</p>
+                </div>
+                <div class="post-actions">
+                    <button class="edit-btn">Редактировать</button>
+                    <button class="delete-btn">Удалить</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="all-posts">
+            <h2>Посты других пользователей</h2>
+            
+            <article class="post-item">
+                <div class="post-content">
+                    <p>Пользователь <strong>IvanGamer</strong>: Я тоже с нетерпением жду релиза!</p>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-content">
+                    <p>Пользователь <strong>DevMaster</strong>: Работаем над улучшением графики.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

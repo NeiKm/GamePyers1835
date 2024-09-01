@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новые игры - GamePyers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GamePyers</h1>
+            <p>Разрабатываем игры</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/posts">Посты</a></li>
+                <li><a href="/games">Новые игры</a></li>
+                <li><a href="/news">Новости</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="games-section">
+            <h2>Новые игры</h2>
+
+            <article class="game-item">
+                <img src="game1.jpg" alt="Игра 1">
+                <div class="game-info">
+                    <h3>Название игры 1</h3>
+                    <p>Описание: Это захватывающая приключенческая игра с великолепной графикой и интересным сюжетом.</p>
+                    <button class="download-btn">Скачать</button>
+                </div>
+            </article>
+
+            <article class="game-item">
+                <img src="game2.jpg" alt="Игра 2">
+                <div class="game-info">
+                    <h3>Название игры 2</h3>
+                    <p>Описание: Исследуйте фантастический мир и участвуйте в эпических битвах в этой новой RPG игре.</p>
+                    <button class="download-btn">Скачать</button>
+                </div>
+            </article>
+
+            <article class="game-item">
+                <img src="game3.jpg" alt="Игра 3">
+                <div class="game-info">
+                    <h3>Название игры 3</h3>
+                    <p>Описание: Испытайте свои навыки в этой увлекательной головоломке с множеством уровней.</p>
+                    <button class="download-btn">Скачать</button>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости GamePyers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GamePyers</h1>
+            <p>Разрабатываем игры будущего</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="news-section">
+            <h2>Последние новости</h2>
+            
+            <article class="news-item">
+                <h3>Новая игра: Космическая Одиссея</h3>
+                <p class="date">1 сентября 2024</p>
+                <p>Наша новая игра "Космическая Одиссея" уже в продаже! Испытайте захватывающее путешествие по галактике...</p>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+            
+            <article class="news-item">
+                <h3>GamePyers на GDC 2024</h3>
+                <p class="date">15 августа 2024</p>
+                <p>Мы с радостью объявляем о нашем участии в конференции разработчиков игр (GDC) 2024...</p>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+            
+            <article class="news-item">
+                <h3>Новые функции в Legend of the Lost</h3>
+                <p class="date">20 июля 2024</p>
+                <p>Готовьтесь к новым функциям в Legend of the Lost, включая многопользовательский режим...</p>
+                <a href="#" class="read-more">Читать далее</a>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

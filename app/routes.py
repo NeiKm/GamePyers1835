@@ -25,10 +25,10 @@ from flask import render_template  # Импортируем функцию дл�
 from app import app  # Импортируем экземпляр приложения Flask
 
 # Определяем маршрут для главной страницы
-@app.route('/')
+@app.route("/")
 def index():
     # При переходе на главную страницу ('/') рендерится шаблон 'index.html'
-    return render_template('index.html')
+    return render_template("index.html")
 
 # Закомментированные маршруты для будущих страниц (если будут нужны дополнительные страницы)
 
@@ -43,3 +43,16 @@ def index():
 # def index():
 #     # При переходе на страницу профиля ('/profil') рендерится шаблон 'index.html'
 #     return render_template('index.html')
+
+
+@app.route("/news")
+def news():
+    return render_template("news.html")
+
+@app.route("/posts")
+def posts():
+    return render_template("posts.html")
+
+@app.route("/games")
+def games():
+    return render_template("games.html")
