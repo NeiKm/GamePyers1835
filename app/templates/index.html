@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на наш сайт</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/news">Новости</a></li>
+            <li><a href="/posts">Посты</a></li>
+            <li><a href="/games">Игры</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Это главная страница нашего сайта, где вы можете найти последние новости, посты и игры.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 GamePyers</p>
+    </footer>
+</body>
+</html>
