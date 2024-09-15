@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profil.css') }}">
+</head>
+<body>
+
+<div class="profile-container">
+    <a href="/"><h3><</h3></a>
+    <div class="profile-header">
+        <img src="{{ url_for('static', filename='img/User_Avatar_NOREG.png') }}" alt="User Avatar" class="avatar">
+        <h1 class="username">{{ user_name }}</h1>
+        <p class="user-role">Пользователь</p>
+    </div>
+
+    <div class="profile-info">
+        <h2>О себе</h2>
+        <p class="user-bio">Функция в разработке</p>
+    </div>
+
+    <div class="profile-details">
+        <h2>Детали</h2>
+        <ul>
+            <li><strong>Email:</strong> {{ email }}</li>
+            <li><strong>Location:</strong> Неизвестно</li>
+            <li><strong>Joined:</strong> Неизвестно</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

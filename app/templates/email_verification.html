@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение Email - GamePyers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .email-verification-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .email-verification-header {
+            margin-bottom: 20px;
+        }
+
+        .email-verification-header h1 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .email-verification-header p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .email-verification-content {
+            margin-top: 20px;
+        }
+
+        .email-verification-content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .email-verification-content a:hover {
+            text-decoration: underline;
+        }
+
+        .email-verification-footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .email-verification-footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-verification-container">
+        <div class="email-verification-header">
+            <h1>Подтвердите Ваш Email</h1>
+            <p>Спасибо за регистрацию в GamePyers! Пожалуйста, подтвердите ваш адрес электронной почты, кликнув по следующей ссылке:</p>
+        </div>
+        <div class="email-verification-content">
+            <p><a href="{{ verification_link }}">Подтвердите ваш Email</a></p>
+        </div>
+        <div class="email-verification-footer">
+            <p>Если вы не зарегистрировались на нашем сайте, просто проигнорируйте это письмо.</p>
+        </div>
+    </div>
+</body>
+</html>

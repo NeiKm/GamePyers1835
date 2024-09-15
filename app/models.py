@@ -13,11 +13,3 @@
 Класс `User` в данном файле определяет структуру таблицы для хранения информации о пользователях, где есть такие поля, как `id`, `username` и `email`. 
 `id` используется как первичный ключ, а `username` и `email` должны быть уникальными и не могут быть пустыми.
 """
-
-# from app import db  # Импортируется объект db из приложения для работы с базой данных
-
-# Класс User определяет модель пользователя
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)  # Первичный ключ
-#     username = db.Column(db.String(80), unique=True, nullable=False)  # Уникальное имя пользователя, не может быть пустым
-#     email = db.Column(db.String(120), unique=True, nullable=False)  # Уникальный email, не может быть пустым

@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(to top left, #191919, #212121, #252525, #191919);
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1px solid #4d0091;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header h1{
+    padding-bottom: 10px;
+}
+
+header:hover {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1px solid #00eaff;
+    align-items: center;
+    transition: 1s;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation ul li {
+    margin-left: 15px;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contacts {
+    float: left;
+    margin-top: 15px;
+    margin-right: 1150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgba(148, 74, 186, 0.6);
+    transition: 1s;
+}
+
+.contacts:hover {
+    box-shadow: 0 2px 7px rgb(4, 0, 255);
+    transition: 1s;
+}
+
+.contacts nav img {
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+}
+
+.contacts ul {
+    list-style: none;
+    display: flex;
+}
+
+.contacts li {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 202, 0.5)), url('/static/img/logo1-resize.PNG');
+    background-size: cover;
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.hero:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(34, 0, 202, 0.5)), url('/static/img/logo1-resize.PNG');
+    transition: 0.5s;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.profil {
+    padding: 20px;
+    background: #151515;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #6300b905;
+    border-top: 1px solid #6300b900;
+}
+
+.profil:hover {
+    border-bottom: 1px solid #0091b976;
+    border-top: 1px solid #0091b976;
+    transition: 0.5s;
+}
+
+.profil p{
+    color: #ffffff;
+    position: absolute;
+    float: left;
+    margin-left: 80px;
+}
+
+.profil img {
+    width: 60px;
+    margin-top: 2px;
+    float: left;
+    height: 60px;
+    background-color: rgba(255, 0, 0, 0.301);
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.profil img:hover {
+    background-color: rgb(0, 242, 255);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.profil a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    float: left;
+    background-color: #424242;
+    border: 0.5px solid #ff000056;
+    padding: 2px 6px;
+    margin-top: 35px;
+    margin-left: 15px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.profil a:hover {
+    transition: 1s;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 242, 255, 0.492);
+}
+
+.profil h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #474747;
+}
+
+.feature {
+    width: 30%;
+    background-color: #1d1d1d;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.5s;
+    border: 1px solid rgba(89, 0, 255, 0.616);
+}
+
+.feature:hover {
+    width: 30%;
+    background-color: #2a2a2a;
+    padding: 15px;
+    text-align: center;
+    transition: 0.5s;
+    border: 1px solid rgba(0, 242, 255, 0.616);
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    color: #bbc3ff;
+}
+
+.feature p {
+    margin-bottom: 10px;
+    color: #fdfdfd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #141414;
+    color: #fff;
+    margin-top: 280px;
+    position: sticky;
+}

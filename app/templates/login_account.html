@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание учетной записи - GamePyers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_account.css') }}">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="form-header">
+            <h1>Вход в учетную запись</h1>
+            <p>Войди а аккаунт :! для участия в нашем игровом сообществе</p>
+        </div>
+        <form method="post" class="registration-form">
+            <div class="input-group">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Электронная почта</label>
+                <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+            </div>
+            <button type="submit" class="submit-btn">Войти</button>
+        </form>
+        <div class="form-footer">
+            <p>Еще нет учетной записи? <a href="#">Войти</a></p>
+        </div>
+    </div>
+</body>
+</html>

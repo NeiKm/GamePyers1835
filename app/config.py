@@ -23,3 +23,15 @@
 #     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard_to_guess_string'
 #     # URI базы данных: сначала пытаемся загрузить из переменной окружения, если не удается, используем SQLite
 #     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///site.db'
+
+class URL:
+    def __init__(self) -> None:
+        self.create_account = "/create_account"
+        self.youtube = "https://www.youtube.com/@GamePyers"
+        self.posts = "/posts"
+        self.news = "/news"
+        self.games = "/games"
+        self.profil = "/profil"
+        self.login_account = "/login_account"
+        self.email_verification = "/email_verification"
+        self.successful_registration = "/successful_registration"
