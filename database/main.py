@@ -21,7 +21,7 @@ if __name__ == "__main__":
     #                                    "email": "kirill.kim.0223@gmail.com",
     #                                    "password": "kirillkim2009232"
     #                                    })
-    # db.delete(table_name="user", condition="id=2")
+    # db.delete(table_name="user", condition="id=1")
     # print(db.check_and_insert(user_name="Nei_km2", password="kirillkim2009232", email="kirill.kim.0223@gmail.com"))
     
     res = db.fetch(table_name="user")

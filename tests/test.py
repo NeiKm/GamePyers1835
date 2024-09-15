@@ -1,29 +1,31 @@
+from flask import render_template, request, redirect, url_for, make_response
+import random
 import smtplib
-from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-smtp_server = 'smtp.gmail.com'
-smtp_port = 587
-smtp_username = 'nei.km.0223@gmail.com' 
-smtp_password = '####'      
-
-msg = MIMEMultipart()
-msg['From'] = smtp_username
-msg['To'] = 'kiryha.pro.0223@gmail.com'
-msg['Subject'] = 'Тестовое письмо от Python'
+from email.mime.multipart import MIMEMultipart
 
 
-body = 'Это тестовое письмо, отправленное из Python'
-msg.attach(MIMEText(body, 'plain'))
+def send_email(text, user_email):
+    smtp_server = "smtp.gmail.com"
+    smtp_port = 587
 
+    msg = MIMEMultipart()
+    msg["From"] = "kirill.kim.0223@gmail.com"
+    msg["To"] = user_email
+    msg["Subject"] = "Ваш 4 значный код для подтверждения регистрации"
 
-try:
-    server = smtplib.SMTP(smtp_server, smtp_port)
-    server.starttls()
-    server.login(smtp_username, smtp_password)
-    server.send_message(msg)
-    print('Email отправлен успешно!')
-except Exception as e:
-    print(f'Ошибка при отправке email: {e}')
-finally:
-    server.quit()
+    msg.attach(MIMEText(text, "plain"))
+
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login("kirill.kim.0223@gmail.com", "xhfr xkuk lpvg nlps")
+
+        server.sendmail("kirill.kim.0223@gmail.com", user_email, msg.as_string())
+        server.quit
+        print(f"Письмо {text} успешно отправлено")
+
+    except Exception as error:
+        print(error)
+
+send_email(text="hi", user_email="kiryha.pro.0223@gmail.com")

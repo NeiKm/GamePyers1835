@@ -80,3 +80,5 @@ With this text, each team member will know exactly where to work and which files
 ├── requirements.txt     # List of dependencies (libraries required for the project)
 ├── README.md            # Project documentation
 └── run.py               # Application entry point (server start)
+
+password - xhfr xkuk lpvg nlps
