@@ -35,3 +35,4 @@ class URL:
         self.login_account = "/login_account"
         self.email_verification = "/email_verification"
         self.successful_registration = "/successful_registration"
+        self.logout ="/logout"

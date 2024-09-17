@@ -21,40 +21,14 @@ def contact():
 Таким образом, при переходе по адресу '/contact' будет отображаться страница с шаблоном 'contact.html'.
 """
 
-from flask import render_template, request, redirect, url_for, make_response
+from flask import render_template, request, redirect, make_response
 from flask_mail import Mail, Message
 from app.config import URL
 import random
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from app import app
 from database.DATABASE import DatabaseManager
 
-def send_email(text, user_email):
-    smtp_server = "smtp.gmail.com"
-    smtp_port = 587
-
-    msg = MIMEMultipart()
-    msg["From"] = "kirill.kim.0223@gmail.com"
-    msg["To"] = user_email
-    msg["Subject"] = "Ваш 4 значный код для подтверждения регистрации"
-
-    msg.attach(MIMEText(text, "plain"))
-
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
-        server.login("kirill.kim.0223@gmail.com", "xhfr xkuk lpvg nlps")
-
-        server.sendmail("kirill.kim.0223@gmail.com", user_email, msg.as_string())
-        server.quit
-        print(f"Письмо {text} успешно отправлено")
-
-    except Exception as error:
-        print(error)
-
-def send_email2(user_email, text):
+def send_email(user_email, text):
     msg = Message(
         "Ваш 4 значный код для подтверждения регистрации",
         sender="kirill.kim.0223@gmail.com",
@@ -68,16 +42,11 @@ def send_email2(user_email, text):
     except Exception as error:
         print(error)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'kirill.kim.0223@gmail.com'
-app.config['MAIL_PASSWORD'] = 'xhfr xkuk lpvg nlps'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
 mail = Mail(app)
 url = URL()
-db = DatabaseManager("database/USER.db")
+user_db = DatabaseManager("database/USER.db")
+posts_db = DatabaseManager("database/POSTS.db")
+
 
 @app.route("/home")
 @app.route("/")
@@ -92,11 +61,12 @@ def index():
         reg_or_profil = "Зарегистрироваться"
         url_reg_or_profil = url.create_account
 
-    return render_template("index.html",
-                           user_name = user_name if user_name else "Гость",
-                           reg_or_profil = reg_or_profil,
-                           url_reg_or_profil = url_reg_or_profil
-                           )
+    return render_template(
+        "index.html",
+        user_name = user_name if user_name else "Гость",
+        reg_or_profil = reg_or_profil,
+        url_reg_or_profil = url_reg_or_profil
+    )
 
 
 @app.route(str(url.news))
@@ -106,25 +76,68 @@ def news():
 
 @app.route(str(url.profil))
 def profil():
-    return render_template("profil.html",
-                            user_name = request.cookies.get("user_name"),
-                            email = request.cookies.get("email")
-                            )
+    return render_template(
+        "profil.html",
+        user_name = request.cookies.get("user_name"),
+        email = request.cookies.get("email"),
+        joined = request.cookies.get("join_date")
+    )
 
+@app.route("/delete_post", methods=["POST"])
+def delete_post():
+    post_id = request.form.get("post_id")
 
-@app.route("/posts", methods=["POST", "GET"])
+    posts_db.delete(table_name="posts", condition=f"id = {post_id}")
+    
+    return redirect("/posts")
+
+@app.route("/edit_post", methods=["POST"])
+def edit_post():
+    post_id = request.form.get("post_id")
+    
+    post = posts_db.fetch(table_name="posts", condition=f"id = {post_id}")
+    
+    if post:
+        return render_template("edit_post.html", post=post[0])
+    else:
+        return "Пост не найден"
+
+@app.route(str(url.posts), methods=["POST", "GET"])
 def posts():
-    posts_content = ""
+
+    user_name = request.cookies.get("user_name")
+
+    this_user = user_db.fetch(
+        table_name="user", 
+        condition=f"user_name = '{user_name}'"
+    )
+
+    if not this_user:
+        return "<h1>Пользователь не найден, зарегестрируйтесь</h1>"
+
+    user_id = this_user[0][0]
+
     if request.method == "POST":
-        posts_content = request.form["post_content"]
 
-    my_post = posts_content if len(posts_content) > 0 else "none"
-    return render_template("posts.html", my_post = my_post)
+        posts_db.insert(
+            table_name="posts",
+            data={
+                "user_id": str(user_id),
+                "content": str(request.form["post_content"])
+            }
+        )
+
+    user_posts = posts_db.fetch(
+        table_name="posts",
+        condition=f"user_id = {user_id}"
+    )
+
+    return render_template("posts.html", my_post=user_posts)
 
 
-@app.route("/out")
+@app.route(str(url.logout))
 def out():
-    res = make_response("<h1>logout</h1>")
+    res = make_response(redirect("/"))
     res.delete_cookie("logged")
     res.delete_cookie("user_name")
     res.delete_cookie("email")
@@ -148,7 +161,7 @@ def login_account():
             "email": request.form["email"]
         }
 
-        users = db.fetch(table_name="user")
+        users = user_db.fetch(table_name="user")
 
         for u in users:
             if user["name"] in u and user["password"] in u and user["email"] in u:
@@ -156,9 +169,13 @@ def login_account():
 
                 response = make_response(redirect(str(url.email_verification)))
                 response.set_cookie("logged", "50%")
-                response.set_cookie("user_name", user["user_name"])
+                response.set_cookie("user_name", user["name"])
                 response.set_cookie("email", user["email"])
                 response.set_cookie("email_verification_sent", "no")
+                users = user_db.fetch(table_name="user")
+                for u in users:
+                    if user["name"] in u and user["password"] in u and user["email"] in u:
+                        response.set_cookie("join_date", str(u[5]))
                 return response
         
         response = "<h1>Ошибка: Неправильное имя пользователя или пароль</h1>"
@@ -184,15 +201,19 @@ def create_account():
 
         if str(user["password"]) == str(user["confirm_password"]):
             try:
-                db_answer = db.check_and_insert(user_name=user["name"], 
-                                                password=user["password"],
-                                                email=user["email"])
+                db_answer = user_db.check_and_insert(user_name=user["name"], 
+                                                     password=user["password"],
+                                                     email=user["email"])
                 if db_answer:
                     response = make_response(redirect(str(url.email_verification)))
                     response.set_cookie("logged", "50%")
                     response.set_cookie("user_name", user["name"])
                     response.set_cookie("email", user["email"])
                     response.set_cookie("email_verification_sent", "no")
+                    users = user_db.fetch(table_name="user")
+                    for u in users:
+                        if user["name"] in u and user["password"] in u and user["email"] in u:
+                            response.set_cookie("join_date", str(u[5]))
                 else:
                     response = make_response(f"Пользователь {user['name']} уже существует")
             except Exception as e:
@@ -210,7 +231,7 @@ def email_verification():
     if request.cookies.get("email_verification_sent") != "yes":
         if request.cookies.get("verification_code") is None:
             really_verification_code = ''.join([str(random.randint(0, 9)) for _ in range(4)])
-            send_email2(request.cookies.get("email"), really_verification_code)
+            send_email(request.cookies.get("email"), really_verification_code)
             response = make_response(render_template("email_verification.html"))
             response.set_cookie("email_verification_sent", "yes")
             response.set_cookie("verification_code", str(really_verification_code))

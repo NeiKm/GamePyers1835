@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Посты - GamePyers</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/posts.css') }}">
+    <title>Управление постами</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_posts.css') }}">
 </head>
 <body>
     <header>
         <div class="logo">
             <h1>GamePyers</h1>
-            <p>Разрабатываем игры</p>
+            <p>Управление постами</p>
         </div>
         <nav>
             <ul>
@@ -23,21 +23,13 @@
     </header>
     
     <main>
-        <section class="post-form">
-            <h2>Создать новый пост</h2>
-            <form method="post" name="post_content">
-                <textarea name="post_content" placeholder="Что у вас на уме?" required></textarea>
-                <button type="submit">Опубликовать</button>
-            </form>
-        </section>
-
         <section class="posts-section">
             <h2>Ваши посты</h2>
             {% for post in my_post %}
                 <article class="post-item">
                     <div class="post-content">
                         <p>{{ post[2] }}</p>
-                        <small>Дата: {{ post[3] }}</small>
+                        <small>Опубликовано: {{ post[3] }}</small>
                     </div>
                     <div class="post-actions">
 
@@ -53,26 +45,13 @@
                     </div>
                 </article>
             {% else %}
-                <p>У вас нет постов.</p>
+                <p>У вас пока нет постов.</p>
             {% endfor %}
         </section>
-
-        <section class="all-posts">
-            <h2>Посты других пользователей</h2>
-            
-            <article class="post-item">
-                <div class="post-content">
-                    <p>Пользователь <strong>IvanGamer</strong>: Жду новой игры про приведение!</p>
-                </div>
-            </article>
-            
-            <article class="post-item">
-                <div class="post-content">
-                    <p>Пользователь <strong>Nei_km</strong>: Работаем над улучшением графики.</p>
-                </div>
-            </article>
-        </section>
-        
     </main>
+
+    <footer>
+        <p>&copy; 2024 GamePyers. Все права защищены.</p>
+    </footer>
 </body>
 </html>

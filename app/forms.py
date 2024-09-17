@@ -17,13 +17,6 @@
 
 """
 
-from flask_wtf import FlaskForm  # Импортируем FlaskForm для создания форм
-from wtforms import StringField, PasswordField, SubmitField, BooleanField  # Импортируем типы полей для формы
-from wtforms.validators import DataRequired, Email, Length  # Импортируем валидатор для обязательных полей
-
-class LoginForm(FlaskForm):
-    username = StringField("Имя учетной записи: ", validators=[DataRequired()])
-    email = StringField("Email: ", validators=[Email()])
-    password = PasswordField("Пароль: ", validators=[DataRequired(), Length(min=4, max=35)])
-    remember = BooleanField("Запомнить", default=False)
-    submit = SubmitField("Войти")
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Email, Length

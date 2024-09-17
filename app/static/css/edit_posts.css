@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+header .logo p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.posts-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.post-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    margin: 0 0 10px;
+    font-size: 1.1em;
+}
+
+.post-content small {
+    color: #777;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.post-actions form {
+    display: inline;
+}
+
+button.edit-btn, button.delete-btn {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.edit-btn:hover {
+    background-color: #45a049;
+}
+
+button.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button.delete-btn:hover {
+    background-color: #e53935;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
