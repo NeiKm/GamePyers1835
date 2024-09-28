@@ -35,7 +35,7 @@ if __name__ == "__main__":
     #     condition="id=4"
     # )
 
-    # db.delete(table_name="user", condition="id=4")
+    # db.delete(table_name="user", condition="id=1")
     # print(db.check_and_insert(user_name="Nei_km2", password="kirillkim2009232", email="kirill.kim.0223@gmail.com"))
     
     # res1 = posts_db.fetch(table_name="posts")

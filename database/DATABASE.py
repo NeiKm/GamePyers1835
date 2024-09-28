@@ -54,6 +54,7 @@ class DatabaseManager:
         self.cursor.execute(sql_query, values)
         self.connection.commit()
         print(f"Данные успешно добавлены в таблицу '{table_name}'.")
+        return True
 
     def update(self, table_name, updates, condition):
         """

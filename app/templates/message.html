@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщение</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/message.css') }}">
+</head>
+<body>
+    <div class="message-container">
+        <div class="message-content">
+            <h1>{{ title }}</h1>
+            <p>{{ text }}</p>
+            <a href="/" class="button">Вернуться на главную</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +28,8 @@ header {
 
 header h1{
     padding-bottom: 10px;
+    color: #00ffe5;
+    font-family: Edu AU VIC WA NT Dots;
 }
 
 header:hover {
@@ -100,12 +106,16 @@ header:hover {
     transition: 0.5s;
 }
 
-.hero h2 {
-    margin-bottom: 20px;
+.hero h1 {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-family: "Playfair Display", serif;
+    color: #ffffff;
 }
 
 .hero p {
     font-size: 1.2em;
+    color: #4bff2b;
 }
 
 .profil {
@@ -115,11 +125,14 @@ header:hover {
     text-align: center;
     border-bottom: 1px solid #6300b905;
     border-top: 1px solid #6300b900;
+    box-shadow: 0 2px 8px rgba(148, 74, 186, 0.6);
+    transition: 0.5s;
 }
 
 .profil:hover {
     border-bottom: 1px solid #0091b976;
     border-top: 1px solid #0091b976;
+    box-shadow: 0 2px 8px rgba(74, 186, 175, 0.6);
     transition: 0.5s;
 }
 

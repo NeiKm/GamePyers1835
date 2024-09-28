@@ -29,7 +29,6 @@
 
 # from app import routes, models  # Импорт маршрутов и моделей для регистрации в приложении
 
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
