@@ -1,31 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.logo h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-.logo p {
-    margin: 5px 0 0;
-    font-size: 18px;
-    font-weight: 300;
-}
-
 .main {
-    padding: 20px;
+    margin-top: 20px;
 }
 
 .news-section {
@@ -36,23 +10,25 @@ header {
 .news-section h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #f0f0f0;
 }
 
 .news-item {
-    background-color: #fff;
+    background-color: #1c1c1c;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .news-item h3 {
     margin: 0 0 10px;
     font-size: 22px;
+    color: #ffffff;
 }
 
 .news-item .date {
-    color: #777;
+    color: #aaaaaa;
     font-size: 14px;
     margin-bottom: 15px;
 }
@@ -60,10 +36,11 @@ header {
 .news-item p {
     font-size: 16px;
     margin: 0 0 15px;
+    color: #e0e0e0;
 }
 
 .read-more {
-    color: #0066cc;
+    color: #4a90e2;
     text-decoration: none;
     font-weight: bold;
 }

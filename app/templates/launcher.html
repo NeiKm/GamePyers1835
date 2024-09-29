@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Скачать Лаунчер - GamePyers{% endblock %}
+
+{% block style_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/launcher.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="launcher-section">
+    <div class="launcher-container">
+        <h2>Скачайте наш новый лаунчер GamePyers</h2>
+        <p>Получите доступ ко всем нашим играм и новостям с помощью нашего лаунчера!</p>
+        <img src="{{ url_for('static', filename='img/launcher_preview.png') }}" alt="Launcher Preview" class="launcher-image">
+        <a href="{{ url_for('static', filename='downloads/launcher.exe') }}" class="download-btn">Скачать Лаунчер</a>
+    </div>
+</main>
+{% endblock %}

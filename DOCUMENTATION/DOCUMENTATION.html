@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation - GamePyers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #00ff99;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        code {
+            background-color: #333;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #04ff04;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .toc {
+            margin-bottom: 30px;
+            background-color: #2e2e2e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .toc a {
+            color: #00ff99;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project Documentation - GamePyers</h1>
+        <p>This document describes the GamePyers project structure, functionality, and key features.</p>
+    </header>
+
+    <section class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#overview">1. Project Overview</a></li>
+            <li><a href="#structure">2. Project Structure</a></li>
+            <li><a href="#technologies">3. Technologies Used</a></li>
+            <li><a href="#setup">4. Setup Instructions</a></li>
+            <li><a href="#functionality">5. Key Functionality</a></li>
+            <li><a href="#future">6. Future Improvements</a></li>
+            <li><a href="#contact">7. Contact</a></li>
+        </ul>
+    </section>
+
+    <section id="overview" class="section">
+        <h2>1. Project Overview</h2>
+        <p><strong>GamePyers</strong> is a gaming community platform where users can view game-related posts, news, and updates. The site includes features such as user registration, post management, and game downloads.</p>
+    </section>
+
+    <section id="structure" class="section">
+        <h2>2. Project Structure</h2>
+        <p>The project follows the MVC (Model-View-Controller) architecture. Below is the current structure:</p>
+        <pre>
+/GamePyers
+    /.env
+    /.flaskenv
+    /app
+        /static
+            /css
+                create_account.css
+                edit_posts.css
+                email_verification.css
+                games.css
+                launcher.css
+                main.css
+                message.css
+                news.css
+                posts.css
+                profil.css
+                style.css
+                successful_registration.css
+            /img
+            /js
+                games.js
+                home.js
+        /templates
+            base.html
+            create_account.html
+            edit_post.html
+            email_verification.html
+            games.html
+            index.html
+            launcher.html
+            login_account.html
+            message.html
+            news.html
+            posts.html
+            profil.html
+            standard.html
+            successful_registration.html
+        __init__.py
+        config.py
+        forms.py
+        models.py
+        routes.py
+    /database
+        USER.db
+        POSTS.db
+    /DOCUMENTATION
+        DOCUMENTATION.html
+        ENGLISH.md
+        РУССКАЯ.md
+    /migrations
+    /tests
+    run.py
+        </pre>
+    </section>
+
+    <section id="technologies" class="section">
+        <h2>3. Technologies Used</h2>
+        <ul>
+            <li>Python 3.11</li>
+            <li>Flask Web Framework</li>
+            <li>SQLite Database</li>
+            <li>HTML, CSS, JavaScript for Frontend</li>
+            <li>Git for Version Control</li>
+            <li>Flask-Mail for email communication</li>
+            <li>random module for generating random values</li>
+            <li>Custom DatabaseManager class for managing the database with detailed documentation on methods</li>
+        </ul>
+    </section>
+
+    <section id="setup" class="section">
+        <h2>4. Setup Instructions</h2>
+        <p>To set up the project locally, follow these steps:</p>
+        <ol>
+            <li>Clone the repository: <code>git clone https://github.com/your-repo/GamePyers.git</code></li>
+            <li>Navigate to the project directory: <code>cd GamePyers</code></li>
+            <li>Create and activate a virtual environment:</li>
+            <pre>
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+            </pre>
+            <li>Install dependencies: <code>pip install "name"</code></li>
+            <li>Run the application: <code>python run.py</code></li>
+        </ol>
+    </section>
+
+    <section id="functionality" class="section">
+        <h2>5. Key Functionality</h2>
+        <ul>
+            <li><strong>User Authentication:</strong> Registration, login, and cookie-based session management.</li>
+            <li><strong>Post Management:</strong> Users can create, edit, and delete posts.</li>
+            <li><strong>News and Updates:</strong> A news section to stay updated on the latest game-related content.</li>
+            <li><strong>Game Downloads:</strong> Users can download games from a dedicated section. (in future updates)</li>
+        </ul>
+    </section>
+
+    <section id="future" class="section">
+        <h2>6. Future Improvements</h2>
+        <p>Planned improvements:</p>
+        <ul>
+            <li>Creation of a new page for post management</li>
+            <li>Database improvements for posts and users, including ratings for posts and followers for users</li>
+            <li>Advanced search and filtering options for posts</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>7. Contact</h2>
+        <p>For questions or suggestions, please contact us at: <a href="mailto:kirill.kim.0223@gmail.com">kirill.kim.0223@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GamePyers Team.</p>
+    </footer>
+
+</body>
+</html>

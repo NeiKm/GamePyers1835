@@ -21,12 +21,14 @@ def contact():
 Таким образом, при переходе по адресу '/contact' будет отображаться страница с шаблоном 'contact.html'.
 """
 
+
 from flask import render_template, request, redirect, make_response
 from flask_mail import Mail, Message
 from app.config import URL
 import random
 from app import app
 from database.DATABASE import DatabaseManager
+
 
 def send_email(user_email, text):
     msg = Message(
@@ -41,6 +43,7 @@ def send_email(user_email, text):
         print(f"Письмо с кодом {text} успешно отправлено")
     except Exception as error:
         print(error)
+
 
 mail = Mail(app)
 url = URL()
@@ -78,6 +81,7 @@ def index():
 
 @app.route(str(url.news))
 def news():
+    # Сделать бд для новостей и сделать страничку управление 222
     return render_template("news.html")
 
 
@@ -90,6 +94,7 @@ def profil():
         joined = request.cookies.get("join_date")
     )
 
+
 @app.route("/delete_post", methods=["POST"])
 def delete_post():
     post_id = request.form.get("post_id")
@@ -97,6 +102,13 @@ def delete_post():
     posts_db.delete(table_name="posts", condition=f"id = {post_id}")
     
     return redirect("/posts")
+
+
+@app.route("/launcher")
+def launcher():
+    # Доделать функционал и внешний вид 111
+    return render_template("launcher.html")
+
 
 @app.route("/edit_post", methods=["POST"])
 def edit_post():
@@ -108,6 +120,7 @@ def edit_post():
         return render_template("edit_post.html", post=post[0])
     else:
         return "Пост не найден"
+
 
 @app.route(str(url.posts), methods=["POST", "GET"])
 def posts():
@@ -205,7 +218,6 @@ def login_account():
     return response
 
 
-
 @app.route(str(url.create_account), methods=["POST", "GET"])
 def create_account():
     response = make_response(render_template("create_account.html"))
@@ -265,7 +277,6 @@ def create_account():
     return response
 
 
-
 @app.route(str(url.email_verification), methods=["POST", "GET"])
 def email_verification():
     if request.cookies.get("email_verification_sent") != "yes":
@@ -316,7 +327,6 @@ def email_verification():
             return response
 
     return render_template("email_verification.html")
-
 
 
 @app.route(str(url.successful_registration))

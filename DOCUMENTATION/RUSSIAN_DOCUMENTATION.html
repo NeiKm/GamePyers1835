@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация проекта - GamePyers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #00ff99;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        code {
+            background-color: #333;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #04ff04;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .toc {
+            margin-bottom: 30px;
+            background-color: #2e2e2e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .toc a {
+            color: #00ff99;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Документация проекта - GamePyers</h1>
+        <p>Этот документ описывает структуру проекта GamePyers, его функционал и ключевые особенности.</p>
+    </header>
+
+    <section class="toc">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#overview">1. Обзор проекта</a></li>
+            <li><a href="#structure">2. Структура проекта</a></li>
+            <li><a href="#technologies">3. Используемые технологии</a></li>
+            <li><a href="#setup">4. Инструкции по установке</a></li>
+            <li><a href="#functionality">5. Ключевой функционал</a></li>
+            <li><a href="#future">6. Будущие улучшения</a></li>
+            <li><a href="#contact">7. Контакты</a></li>
+        </ul>
+    </section>
+
+    <section id="overview" class="section">
+        <h2>1. Обзор проекта</h2>
+        <p><strong>GamePyers</strong> — это платформа для игровой сообщества, где пользователи могут просматривать посты, новости и обновления, связанные с играми. На сайте есть такие функции, как регистрация пользователей, управление постами и загрузка игр.</p>
+    </section>
+
+    <section id="structure" class="section">
+        <h2>2. Структура проекта</h2>
+        <p>Проект следует архитектуре MVC (Model-View-Controller). Вот текущая структура:</p>
+        <pre>
+/GamePyers
+    /.env
+    /.flaskenv
+    /app
+        /static
+            /css
+                create_account.css
+                edit_posts.css
+                email_verification.css
+                games.css
+                launcher.css
+                main.css
+                message.css
+                news.css
+                posts.css
+                profil.css
+                style.css
+                successful_registration.css
+            /img
+            /js
+                games.js
+                home.js
+        /templates
+            base.html
+            create_account.html
+            edit_post.html
+            email_verification.html
+            games.html
+            index.html
+            launcher.html
+            login_account.html
+            message.html
+            news.html
+            posts.html
+            profil.html
+            standard.html
+            successful_registration.html
+        __init__.py
+        config.py
+        forms.py
+        models.py
+        routes.py
+    /database
+        USER.db
+        POSTS.db
+    /DOCUMENTATION
+        DOCUMENTATION.html
+        ENGLISH.md
+        РУССКАЯ.md
+    /migrations
+    /tests
+    run.py
+        </pre>
+    </section>
+
+    <section id="technologies" class="section">
+        <h2>3. Используемые технологии</h2>
+        <ul>
+            <li>Python 3.11</li>
+            <li>Веб-фреймворк Flask</li>
+            <li>База данных SQLite</li>
+            <li>HTML, CSS, JavaScript для фронтенда</li>
+            <li>Git для контроля версий</li>
+            <li>Flask-Mail для отправки электронной почты</li>
+            <li>Модуль random для генерации случайных значений</li>
+            <li>Самодельный класс DatabaseManager для управления базой данных с подробной документацией по методам</li>
+        </ul>
+    </section>
+
+    <section id="setup" class="section">
+        <h2>4. Инструкции по установке</h2>
+        <p>Чтобы настроить проект локально, выполните следующие шаги:</p>
+        <ol>
+            <li>Клонируйте репозиторий: <code>git clone https://github.com/your-repo/GamePyers.git</code></li>
+            <li>Перейдите в каталог проекта: <code>cd GamePyers</code></li>
+            <li>Создайте и активируйте виртуальное окружение:</li>
+            <pre>
+python -m venv venv
+source venv/bin/activate  # В Windows: venv\Scripts\activate
+            </pre>
+            <li>Установите зависимости: <code>pip install "name"</code></li>
+            <li>Запустите приложение: <code>python run.py</code></li>
+        </ol>
+    </section>
+
+    <section id="functionality" class="section">
+        <h2>5. Ключевой функционал</h2>
+        <ul>
+            <li><strong>Аутентификация пользователей:</strong> регистрация, вход и управление сессиями на основе куки-файлов.</li>
+            <li><strong>Управление постами:</strong> пользователи могут создавать, редактировать и удалять посты.</li>
+            <li><strong>Новости и обновления:</strong> раздел новостей для получения последних обновлений по играм.</li>
+            <li><strong>Загрузка игр:</strong> пользователи могут загружать игры через специальный раздел. (в будущих обновлениях)</li>
+        </ul>
+    </section>
+
+    <section id="future" class="section">
+        <h2>6. Будущие улучшения</h2>
+        <p>Запланированные улучшения:</p>
+        <ul>
+            <li>Создание новой страницы для управления постами</li>
+            <li>Улучшение базы данных для постов и пользователей, включая рейтинги постов и подписчиков пользователей</li>
+            <li>Расширенные функции поиска и фильтрации постов</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>7. Контакты</h2>
+        <p>По вопросам и предложениям пишите нам на: <a href="mailto:kirill.kim.0223@gmail.com">kirill.kim.0223@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Команда GamePyers.</p>
+    </footer>
+
+</body>
+</html>

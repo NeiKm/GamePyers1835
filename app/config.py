@@ -36,3 +36,4 @@ class URL:
         self.email_verification = "/email_verification"
         self.successful_registration = "/successful_registration"
         self.logout ="/logout"
+        # Добавить все мршруты 111

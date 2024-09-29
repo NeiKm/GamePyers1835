@@ -1,59 +1,83 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новые игры - GamePyers</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>GamePyers</h1>
-            <p>Разрабатываем игры</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/posts">Посты</a></li>
-                <li><a href="/games">Новые игры</a></li>
-                <li><a href="/news">Новости</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="games-section">
-            <h2>Новые игры</h2>
+{% extends "base.html" %}
 
+{% block title %}Новые игры - GamePyers{% endblock %}
+
+{% block style_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="hero">
+        <h1>Игры</h1>
+        <p>Окунитесь в увлекательные миры и испытайте свои навыки в наших уникальных проектах.</p>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeBtn">x</span>
+            <h2>Пробовали новый лаунчер?</h2>
+            <p>Попробуйте наш новый лаунчер, чтобы получить доступ ко всем играм!</p>
+            <button id="tryNow">Попробовать сейчас</button>
+        </div>
+    </div>
+
+    <section class="games-section">
+        <article class="game-item">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/2/2e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B8%D0%B3%D1%80%D1%8B_Concord.png/274px-%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B8%D0%B3%D1%80%D1%8B_Concord.png" alt="Игра 1">
+            <div class="game-info">
+                <h3>Просто пример 1</h3>
+                <p>Описание: Это захватывающая приключенческая игра с великолепной графикой и интересным сюжетом.</p>
+                <button class="download-btn">Скачать</button>
+            </div>
+        </article>
+
+        <article class="game-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGYhy76V7yOw-ML-J8-Xat-5HL57h4ExHWTA&s" alt="Игра 2">
+            <div class="game-info">
+                <h3>Просто пример 2</h3>
+                <p>Описание: Исследуйте фантастический мир и участвуйте в эпических битвах в этой новой RPG игре.</p>
+                <button class="download-btn">Скачать</button>
+            </div>
+        </article>
+
+        <article class="game-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlyELPRB4nrFZ-isagF4J8b_c_MPD1N2sS4g&s" alt="Игра 3">
+            <div class="game-info">
+                <h3>Просто пример 3</h3>
+                <p>Описание: Испытайте свои навыки в этой увлекательной головоломке с множеством уровней.</p>
+                <button class="download-btn">Скачать</button>
+            </div>
+        </article>
+
+        <section class="games-section">
             <article class="game-item">
-                <img src="game1.jpg" alt="Игра 1">
+                <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/2/2e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B8%D0%B3%D1%80%D1%8B_Concord.png/274px-%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%B8%D0%B3%D1%80%D1%8B_Concord.png" alt="Игра 1">
                 <div class="game-info">
-                    <h3>Название игры 1</h3>
+                    <h3>Просто пример 1</h3>
                     <p>Описание: Это захватывающая приключенческая игра с великолепной графикой и интересным сюжетом.</p>
                     <button class="download-btn">Скачать</button>
                 </div>
             </article>
-
+    
             <article class="game-item">
-                <img src="game2.jpg" alt="Игра 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGYhy76V7yOw-ML-J8-Xat-5HL57h4ExHWTA&s" alt="Игра 2">
                 <div class="game-info">
-                    <h3>Название игры 2</h3>
+                    <h3>Просто пример 2</h3>
                     <p>Описание: Исследуйте фантастический мир и участвуйте в эпических битвах в этой новой RPG игре.</p>
                     <button class="download-btn">Скачать</button>
                 </div>
             </article>
-
+    
             <article class="game-item">
-                <img src="game3.jpg" alt="Игра 3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlyELPRB4nrFZ-isagF4J8b_c_MPD1N2sS4g&s" alt="Игра 3">
                 <div class="game-info">
-                    <h3>Название игры 3</h3>
+                    <h3>Просто пример 3</h3>
                     <p>Описание: Испытайте свои навыки в этой увлекательной головоломке с множеством уровней.</p>
                     <button class="download-btn">Скачать</button>
                 </div>
             </article>
-        </section>
-    </main>
-</body>
-</html>
+    </section>
+</main>
+<script src="{{ url_for('static', filename='js/games.js') }}" ></script>
+{% endblock %}

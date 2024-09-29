@@ -21,7 +21,8 @@ header {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.1px solid #4d0091;
+    box-shadow: 0 2px 8px rgba(173, 74, 186, 0.6);
+    border-bottom: 0.1px solid rgba(173, 74, 186, 0.6);
     align-items: center;
     transition: 0.5s;
 }
@@ -38,7 +39,8 @@ header:hover {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.1px solid #00eaff;
+    box-shadow: 0 2px 8px #00eaff7c;
+    border-bottom: 0.1px solid #00eaff7c;
     align-items: center;
     transition: 1s;
 }

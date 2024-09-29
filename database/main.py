@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # db.insert(table_name="user", data={"user_name": "Nei_km",
     #                                    "name": "kirill",
     #                                    "email": "kirill.kim.0223@gmail.com",
-    #                                    "password": "kirillkim2009232"
+    #                                    "password": "123"
     #                                    })
 
     # posts_db.delete(

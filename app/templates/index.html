@@ -1,75 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamePyers</title>
+{% extends "base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block style_css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <header>
-        
-        <h1>GamePyers</h1>
-        <div class="contacts">
-            <!-- <progress max="100" value="12"></progress>
-            <details> -->
-                <nav>
-                    <ul>
-                        <li><a href="https://www.youtube.com/@GamePyers"><img src="{{ url_for('static', filename='img/youtube_logo.webp') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/facebook_logo.png') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/x_logo.avif') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/instagram_logo.png') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/telegram_logo.jpg') }}" alt=""></a></li>
-                    </ul>
-                </nav>
-            <!-- </details> -->
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="hero">
+        <h1>Добро пожаловать в GamePyers</h1>
+        <p>Ваш центр последних игр и новостей.</p>
+    </section>
+
+    <section>
+        <div class="profil">
+            <img src="{{ url_for('static', filename='img/User_Avatar_NOREG.png') }}" alt="avatar">
+            <p>{{ user_name }}</p>
+            <a href="{{ url_reg_or_profil }}">{{ reg_or_profil }}</a>
         </div>
-        <div class="theme"></div>
-        <div class="navigation">
-            <nav>
-                <ul>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/posts">Посты</a></li>
-                    <li><a href="/news">Новости</a></li>
-                    <li><a href="/games">Игры</a></li>
-                    <li><a href="/logout">Выход</a></li>
-                </ul>
-            </nav>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Невероятные рекорды игроков</h3>
+            <p>Будь в курсе невероятных рекордов игроков со всего мира!</p>
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>Добро пожаловать в GamePyers</h1>
-            <p>Ваш центр последних игр и новостей.</p>
-        </section>
-
-        <section>
-            <div class="profil">
-                <img src="{{ url_for('static', filename='img/User_Avatar_NOREG.png') }}" alt="avatar">
-                <p>{{ user_name }}</p>
-                <a href="{{ url_reg_or_profil }}">{{ reg_or_profil }}</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature">
-                <h3>Невероятные рекорды игроков</h3>
-                <p>Будь в курсе невероятных рекордов игроков со всего мира!</p>
-            </div>
-            <div class="feature">
-                <h3>Самые популярные посты</h3>
-                <p>Самые громкие темы за неделю!</p>
-            </div>
-            <div class="feature">
-                <h3>Топ популярных игр</h3>
-                <p>Топ 3 самых популярных игр от нас!</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 GamePyers.</p>
-    </footer>
-</body>
-</html>
+        <div class="feature">
+            <h3>Самые популярные посты</h3>
+            <p>Самые громкие темы за неделю!</p>
+        </div>
+        <div class="feature">
+            <h3>Топ популярных игр</h3>
+            <p>Топ 3 самых популярных игр от нас!</p>
+        </div>
+    </section>
+</main>
+{% endblock %}

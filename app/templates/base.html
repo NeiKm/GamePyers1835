@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block style_css %} {% endblock %}"
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>{% block title %} {% endblock %}</title>
+    {% block style_css %}{% endblock %}
+    <title>{% block title %}GamePyers{% endblock %}</title>
 </head>
 <body>
-    <header></header>
+    <header>
         <h1>GamePyers</h1>
         <div class="contacts">
             <progress max="100" value="12"></progress>
             <details>
                 <nav>
                     <ul>
-                        <li><a href="https://www.youtube.com/@GamePyers"><img src="{{ url_for('static', filename='img/youtube_logo.webp') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/facebook_logo.png') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/x_logo.avif') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/instagram_logo.png') }}" alt=""></a></li>
-                        <li><a href="/"><img src="{{ url_for('static', filename='img/telegram_logo.jpg') }}" alt=""></a></li>
+                        <li><a href="https://www.youtube.com/@GamePyers"><img src="{{ url_for('static', filename='img/youtube_logo.webp') }}" alt="YouTube"></a></li>
+                        <li><a href="/"><img src="{{ url_for('static', filename='img/facebook_logo.png') }}" alt="Facebook"></a></li>
+                        <li><a href="/"><img src="{{ url_for('static', filename='img/x_logo.avif') }}" alt="X"></a></li>
+                        <li><a href="/"><img src="{{ url_for('static', filename='img/instagram_logo.png') }}" alt="Instagram"></a></li>
+                        <li><a href="/"><img src="{{ url_for('static', filename='img/telegram_logo.jpg') }}" alt="Telegram"></a></li>
                     </ul>
                 </nav>
             </details>
@@ -37,6 +37,8 @@
             </nav>
         </div>
     </header>
-    {% block content %} {% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>

@@ -1,0 +1,48 @@
+body {
+    background-color: #1c1c1c;
+}
+
+.launcher-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.launcher-container {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+.launcher-container h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.launcher-container p {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.launcher-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    padding: 12px 24px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #357ab8;
+}
